@@ -1,0 +1,5 @@
+git-repos
+.vscode
+qtmoduleupdater
+state_*.json
+coin-secrets

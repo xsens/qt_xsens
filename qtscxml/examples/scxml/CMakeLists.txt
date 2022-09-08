@@ -1,0 +1,32 @@
+# Generated from scxml.pro.
+
+if (TARGET Qt::Network AND QT_FEATURE_scxml_ecmascriptdatamodel)
+    add_subdirectory(ftpclient)
+endif()
+
+if(TARGET Qt::Widgets)
+    add_subdirectory(trafficlight-widgets-static)
+    add_subdirectory(trafficlight-widgets-dynamic)
+    if(QT_FEATURE_scxml_ecmascriptdatamodel)
+        # Work around QTBUG-95305
+        if(NOT (CMAKE_GENERATOR STREQUAL "Ninja Multi-Config" AND CMAKE_CROSS_CONFIGS))
+            add_subdirectory(mediaplayer-widgets-static)
+            add_subdirectory(mediaplayer-widgets-dynamic)
+        endif()
+        add_subdirectory(calculator-widgets)
+        add_subdirectory(pinball)
+        add_subdirectory(sudoku)
+    endif()
+endif()
+
+if(TARGET Qt::Qml AND TARGET Qt::Gui)
+    add_subdirectory(calculator-qml)
+    add_subdirectory(trafficlight-qml-static)
+    add_subdirectory(trafficlight-qml-dynamic)
+    add_subdirectory(trafficlight-qml-simple)
+    add_subdirectory(mediaplayer-qml-static)
+    add_subdirectory(mediaplayer-qml-dynamic)
+    add_subdirectory(mediaplayer-qml-cppdatamodel)
+    add_subdirectory(invoke-static)
+    add_subdirectory(invoke-dynamic)
+endif()

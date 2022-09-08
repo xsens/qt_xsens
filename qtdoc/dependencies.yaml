@@ -1,0 +1,10 @@
+dependencies:
+  ../qtdeclarative:
+    ref: 00c352c4d4b61f8c7a6243768bc5375c3dca3e76
+    required: true
+  ../qtmultimedia:
+    ref: 530831c141f4bdab2a737f4deff63e714e26af17
+    required: false
+  ../qttools:
+    ref: f2d999c0fe298dcb3ffebbda9390e894f0e32d18
+    required: true
